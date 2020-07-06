@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Weekly Attendance Sheet</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+
+        body{
+            font-size:12px;
+        }
+
+        .border-bottom{
+            border-bottom: 2px solid;
+            margin: 0 0 10px 0;
+        }
+
+        .rTable {
+            display: table;
+            width: 100%;
+        }
+        .rTableRow {
+            display: table-row;
+        }
+        .rTableCell {
+            display: table-cell;
+            padding: 3px 10px;
+            border: 1px solid #999999;
+        }
+        .rTableCell-blank {
+            display: table-cell;
+            padding: 3px 10px;
+        }
+        .rTableHead {
+            display: table-cell;
+            padding: 6px 4px;
+            border: 1px solid #999999;
+            background-color: rgba(0, 0, 0, 0.08);
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .rTableHeading {
+            display: table-header-group;
+            background-color: #ddd;
+            font-weight: bold;
+        }
+        .rTableFoot {
+            display: table-footer-group;
+            font-weight: bold;
+            background-color: #ddd;
+        }
+        .rTableBody {
+            display: table-row-group;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row border-bottom">
+        <div class="col-md-7"></div>
+        <div class="col-md-5 text-center"><h3><strong>Weekly Time Sheet</strong></h3></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"><p>Employee Name : #_name_#</p></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><p>Employee Number  : #_empNum_#</p></div>
+        <div class="col-md-6"><p>Department  : #_department_#</p></div>
+    </div>
+
+    <!-- First Table Start -->
+    <hr/>
+    <div class="row">
+        <div class="col-md-6"><p>Period Starting Date : #_date_start_#</p></div>
+        <div class="col-md-6"><p>Period Ending Date : #_date_end_#</p></div>
+    </div>
+    <div class="table-responsive">
+        <div class="rTable">
+            <div class="rTableRow">
+                <div class="rTableHead">DAY/DATE</div>
+                <div class="rTableHead">TIME IN</div>
+                <div class="rTableHead">BREAK TIME</div>
+                <div class="rTableHead">TIME OUT</div>
+                <div class="rTableHead">TOTAL HOURS</div>
+                <div class="rTableHead">TOTAL REGULAR HOURS</div>
+                <div class="rTableHead">TOTAL OVERTIME HOURS</div>
+                <div class="rTableHead">DETAILS</div>
+            </div>
+
+            #_days_#
+
+            <div class="rTableRow">
+                <div class="rTableCell-blank"></div>
+                <div class="rTableCell-blank"><strong>Weekly Total</strong></div>
+                <div class="rTableCell">#_total_break_#</div>
+                <div class="rTableCell-blank"></div>
+                <div class="rTableCell">#_total_all_#</div>
+                <div class="rTableCell">#_total_reg_#</div>
+                <div class="rTableCell">#_total_overtime_#</div>
+                <div class="rTableCell-blank"></div>
+            </div>
+        </div>
+    </div>
+    <!-- First Table End -->
+
+    <div class="row">
+        <div class="col-md-12"><p>By signing this time sheet, I certify that the above is an accurate reflection of all hours worked and not worked during the indicated time period.</p></div>
+        <div class="col-md-8"><p>Employee Signature  : </p></div>
+        <div class="col-md-4"><p>Date  : </p></div>
+        <div class="col-md-8"><p>Supervisor/Manager Signature  : </p></div>
+        <div class="col-md-4"><p>Date  : </p></div>
+    </div>
+</div>
+</body>
+</html>

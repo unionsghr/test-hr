@@ -1,0 +1,13 @@
+{
+    "label": "Job Positions",
+    "menu": "Recruitment",
+    "order": "2",
+    "icon": "fa-columns",
+    "user_levels": [
+        "Admin",
+        "Manager"
+    ],
+    "permissions": [],
+    "model_namespace": "\\JobPositions\\Common\\Model",
+    "manager": "\\JobPositions\\Admin\\Api\\JobPositionsAdminManager"
+}

@@ -1,0 +1,15 @@
+{
+    "label": "Conversations",
+    "menu": "Discussions",
+    "order": "2",
+    "icon": "fa-comment",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "Employee"
+    ],
+    "dashboardPosition": 112,
+    "permissions": [],
+    "model_namespace": "\\Conversations\\Common\\Model",
+    "manager": "\\Conversations\\User\\Api\\ConversationsModulesManager"
+}

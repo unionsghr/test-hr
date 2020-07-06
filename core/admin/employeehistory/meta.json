@@ -1,0 +1,12 @@
+{
+    "label": "Employee History",
+    "menu": "Employees",
+    "order": "11",
+    "icon": "fa-tasks",
+    "user_levels": [
+        "Admin"
+    ],
+    "permissions": [],
+    "model_namespace": "\\EmployeeHistory\\Common\\Model",
+    "manager": "\\EmployeeHistory\\Admin\\Api\\EmployeehistoryAdminManager"
+}

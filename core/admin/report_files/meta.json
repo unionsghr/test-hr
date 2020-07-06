@@ -1,0 +1,13 @@
+{
+  "label":"Report Files",
+  "menu":"Admin Reports",
+  "order":"2",
+  "icon":"fa-file-export",
+  "user_levels":["Admin","Manager"],
+  "dashboardPosition":7,
+  "permissions":
+      {
+      },
+  "model_namespace": "\\ReportFiles\\Common\\Model",
+  "manager": "\\ReportFiles\\Admin\\Api\\ReportFilesAdminManager"
+}

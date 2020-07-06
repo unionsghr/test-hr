@@ -1,0 +1,14 @@
+{
+    "label": "Expense Administration",
+    "menu": "Admin",
+    "order": "81",
+    "icon": "fa-bars",
+    "user_levels": [
+        "Admin",
+        "Manager"
+    ],
+    "dashboardPosition": 14,
+    "permissions": [],
+    "model_namespace": "\\Expenses\\Common\\Model",
+    "manager": "\\Expenses\\Admin\\Api\\ExpensesAdminManager"
+}

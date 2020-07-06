@@ -1,0 +1,14 @@
+{
+    "label": "Candidates",
+    "menu": "Recruitment",
+    "order": "3",
+    "icon": "fa-users",
+    "user_levels": [
+        "Admin",
+        "Manager"
+    ],
+    "dashboardPosition": 9,
+    "permissions": [],
+    "model_namespace": "\\Candidates\\Common\\Model",
+    "manager": "\\Candidates\\Admin\\Api\\CandidatesAdminManager"
+}

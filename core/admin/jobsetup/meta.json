@@ -1,0 +1,13 @@
+{
+    "label": "Recruitment Setup",
+    "menu": "Recruitment",
+    "order": "1",
+    "icon": "fa-random",
+    "user_levels": [
+        "Admin"
+    ],
+    "dashboardPosition": 10,
+    "permissions": [],
+    "model_namespace": "\\JobSetup\\Common\\Model",
+    "manager": "\\JobSetup\\Admin\\Api\\JobSetupAdminManager"
+}

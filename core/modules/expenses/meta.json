@@ -1,0 +1,21 @@
+{
+    "label": "Expenses",
+    "menu": "Finance",
+    "order": "1",
+    "icon": "fa-bars",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "Employee"
+    ],
+    "dashboardPosition": 108,
+    "permissions": {
+        "Employee": {
+            "Add Expenses": "Yes",
+            "Edit Expenses": "Yes",
+            "Delete Expenses": "Yes"
+        }
+    },
+    "model_namespace": "\\Expenses\\Common\\Model",
+    "manager": "\\Expenses\\User\\Api\\ExpensesModulesManager"
+}

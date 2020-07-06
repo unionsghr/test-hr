@@ -1,0 +1,14 @@
+{
+  "label": "Performance Reviews",
+  "menu": "Employees",
+  "order": "82",
+  "icon": "fa-bezier-curve",
+  "user_levels": [
+    "Admin",
+    "Manager"
+  ],
+  "dashboardPosition": 18,
+  "permissions": [],
+  "model_namespace": "\\Performance\\Common\\Model",
+  "manager": "\\Performance\\Admin\\Api\\PerformanceAdminManager"
+}

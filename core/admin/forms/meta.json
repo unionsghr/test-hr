@@ -1,0 +1,14 @@
+{
+    "label": "HR Form Management",
+    "menu": "Employees",
+    "order": "81",
+    "icon": "fa-folder",
+    "user_levels": [
+        "Admin",
+        "Manager"
+    ],
+    "dashboardPosition": 17,
+    "permissions": [],
+    "model_namespace": "\\Forms\\Common\\Model",
+    "manager": "\\Forms\\Admin\\Api\\FormsAdminManager"
+}

@@ -1,0 +1,13 @@
+{
+    "label": "Company Assets",
+    "menu": "Admin",
+    "order": "891",
+    "icon": "fa-archive",
+    "user_levels": [
+        "Admin",
+        "Manager"
+    ],
+    "permissions": [],
+    "model_namespace": "\\Asset\\Common\\Model",
+    "manager": "\\Asset\\Admin\\Api\\AssetAdminManager"
+}

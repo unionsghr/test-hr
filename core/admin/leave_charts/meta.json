@@ -1,0 +1,13 @@
+{
+    "label": "Leave Timeline",
+    "menu": "Insights",
+    "order": "2",
+    "icon": "fa-calendar-alt",
+    "user_levels": [
+        "Admin",
+        "Manager"
+    ],
+    "permissions": [],
+    "model_namespace": "\\LeaveCharts\\Common\\Model",
+    "manager": "\\LeaveCharts\\Admin\\Api\\LeaveChartsAdminManager"
+}

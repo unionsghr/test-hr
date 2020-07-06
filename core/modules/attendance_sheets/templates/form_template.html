@@ -1,0 +1,20 @@
+<form class="form-horizontal" id="timesheet_entries_cont">
+	<span style="font-size:15px;font-weight:bold;color:#999;margin-left:10px;">
+  	Timesheet From <span class="timesheet_start"></span> to <span class="timesheet_end"></span>
+	</span>
+	<table class="table table-condensed table-bordered table-striped" id="timesheet_entries" style="width:100%;font-size:12px;margin-left:5px;">
+			<thead>
+			<tr>
+			<th>Punch In</th>
+			<th>Punch Out</th>
+			<th>Duration</th>
+			<th>Details</th>
+			</tr>
+			</thead>
+			<tbody id="timesheet_entries_table_body" class="timesheet_entries_table_body">
+			</tbody>
+	</table> 
+  	<div class="control-group">
+      		<button id="submit_sheet" onclick="modJs.changeTimeSheetStatusWithId(modJs.currentId,'Submitted');return false;" class="btn" style="display:none;"><span class="icon-ok"></span> Submit for Approval</button>
+  	</div>
+</form>

@@ -1,0 +1,15 @@
+{
+  "label": "Reviews",
+  "menu": "Performance",
+  "order": "1",
+  "icon": "fa-compress-arrows-alt",
+  "user_levels": [
+    "Admin",
+    "Manager",
+    "Employee"
+  ],
+  "dashboardPosition": 110,
+  "permissions": [],
+  "model_namespace": "\\Performance\\Common\\Model",
+  "manager": "\\Performance\\User\\Api\\PerformanceModulesManager"
+}

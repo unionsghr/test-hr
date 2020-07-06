@@ -1,0 +1,15 @@
+{
+    "label": "HR Forms",
+    "menu": "Documents",
+    "order": "2",
+    "icon": "fa-wpforms",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "Employee"
+    ],
+    "dashboardPosition": 109,
+    "permissions": [],
+    "model_namespace": "\\Forms\\Common\\Model",
+    "manager": "\\Forms\\User\\Api\\FormsModulesManager"
+}

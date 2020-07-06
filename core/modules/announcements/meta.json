@@ -1,0 +1,22 @@
+{
+    "label": "Announcements",
+    "menu": "Discussions",
+    "order": "1",
+    "icon": "fa-bullhorn",
+    "user_levels": [
+        "Admin",
+        "Manager",
+        "Employee"
+    ],
+    "dashboardPosition": 111,
+    "permissions": {
+        "Manager": {
+            "Post Announcements": "Yes"
+        },
+        "Employee": {
+            "Post Announcements": "No"
+        }
+    },
+    "model_namespace": "\\Conversations\\Common\\Model",
+    "manager": "\\Conversations\\User\\Api\\ConversationsModulesManager"
+}

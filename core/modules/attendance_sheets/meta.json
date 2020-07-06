@@ -1,0 +1,14 @@
+{
+	"label":"Attendance Sheets",
+	"menu":"Time Management",
+	"order":"4",
+	"icon":"fa-calendar-check",
+	"user_levels":["Admin","Manager","Employee"],
+		"dashboardPosition":105,
+
+	"permissions":
+		{
+		},
+	"model_namespace": "\\AttendanceSheets\\Common\\Model",
+	"manager": "\\AttendanceSheets\\User\\Api\\AttendanceSheetsModulesManager"
+}
