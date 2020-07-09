@@ -31,6 +31,7 @@ class StaffDirectory extends Employee
             $emp->last_name = $entry->last_name;
             $emp->job_title = $entry->job_title;
             $emp->department = $entry->department;
+            $emp->branch = $entry->branch;
             $emp->work_phone = $entry->work_phone;
             $emp->work_email = $entry->work_email;
             $emp->joined_date = $entry->joined_date;
