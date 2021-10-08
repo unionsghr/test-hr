@@ -1507,8 +1507,8 @@
                               label: "Gender",
                               type: "select",
                               source: [
-                                ["Male", "Male"],
-                                ["Female", "Female"],
+                                ["M", "Male"],
+                                ["F", "Female"],
                               ],
                             },
                           ],
@@ -1893,7 +1893,7 @@
                             {
                               label: "City",
                               type: "text",
-                              validation: "none",
+                              validation: "",
                             },
                           ],
                           [
@@ -3386,7 +3386,7 @@
                 {
                   key: "approveEmployee",
                   value: function (e) {
-                    // alert(e);
+                    alert(e);
                     // return false;
 
                     if (
@@ -3400,7 +3400,9 @@
 
                       let id = e;
                       let status = "Approved";
-                      // alert(id);
+                      alert(id);
+                      alert(id);
+
                       // return false;
 
                       $.ajax({
@@ -3416,7 +3418,7 @@
                           // category: category
                         }),
                         success: function (data, textStatus, jQxhr) {
-                          // console.log(data);
+                          console.log(data);
                           // alert(data);
                         },
                       });
@@ -3719,7 +3721,7 @@
                         {
                           label: "City",
                           type: "text",
-                          validation: "none",
+                          validation: "",
                         },
                       ],
                       [
@@ -4055,8 +4057,8 @@
                           label: "Gender",
                           type: "select",
                           source: [
-                            ["Male", "Male"],
-                            ["Female", "Female"],
+                            ["M", "Male"],
+                            ["F", "Female"],
                           ],
                         },
                       ],
@@ -7153,6 +7155,8 @@
               {
                 key: "getClientMessage",
                 value: function (e) {
+
+                  
                   return this.getWSProperty(this.msgList, e);
                 },
               },
@@ -7240,7 +7244,7 @@
                     //   '<button onclick="modJs.downloadEmployees();return false;" class="btn btn-small btn-primary">' +
                     //   this.gt("Download(pdf)") +
                     //   ' <i class="fa fa-download"></i></button>'),
-                    (e = e.replace(/__id__/g, this.getTableName())),
+                    (e = e.replace(/__id__/g, this.getTableName())), 
                     "" !==
                       (e =
                         "" !== this.currentFilterString &&

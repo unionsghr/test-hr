@@ -17,10 +17,11 @@ $json = file_get_contents('php://input');
 
 // Converts it into a PHP object
 $data = json_decode($json);
-// $id = "755";
+// $id = "1";
 $id = $data->id_;
 $status = $data->status_;
 $currentUser = $data->currentUser;
+// $currentUser = "Admin";
 // $status = "Approved";
 $query_bank = "SELECT * from employeebankdetails where id = '1'";
 $res_bank = mysqli_query($mysqli, $query_bank);
@@ -67,13 +68,16 @@ if ($status == 'Approved') {
         $tin = $row['tin_no'];
         $branch = $row['branch'];
         $nin = $row['nic_num'];
+        $initials = $row['initials'];
+        $title = $row['title'];
+
 
     }
 
     //   echo $city." ".$first_name." ".$middle_name." ".$last_name." ".$country ; die();
 
     // $new_profile = $profile_image
-    $profile_path = 'C:/xampp/htdocs/rokel_hr/app/data/'.$profile_image.'.jpg';
+    $profile_path = 'C:/xampp/htdocs/rokel_hrm/app/data/'.$profile_image.'.jpg';
 // $profile_path = 'C:/xampp/htdocs/rokel_hr/app/data/'.$profile_image.'.jpg' || 'C:/xampp/htdocs/rokel_hr/app/data/'.$profile_image.'.png' || 'C:/xampp/htdocs/rokel_hr/app/data/'.$profile_image.'.jpeg';
  
 // get the extension of the image to generate base64 string
@@ -88,7 +92,7 @@ $profile_code = base64_encode($profile_data);
 // create base64 string of image
 // echo $profile_code;
 
-$signature_path = 'C:/xampp/htdocs/rokel_hr/app/data/'.$signature.'.jpg';
+$signature_path = 'C:/xampp/htdocs/rokel_hrm/app/data/'.$signature.'.jpg';
 // $signature_path = 'C:/xampp/htdocs/rokel_hr/app/data/'.$signature.'.jpg' || $signature_path = 'C:/xampp/htdocs/rokel_hr/app/data/'.$signature.'.png' || $signature_path = 'C:/xampp/htdocs/rokel_hr/app/data/'.$signature.'.jpeg';
  
 // get the extension of the image to generate base64 string
@@ -112,99 +116,191 @@ $signature_code = base64_encode($signature_data);
 // $result = mysqli_query($mysqli, $sql_profile);
 
 
-    $curl = curl_init();
+//----------------- OLD ACCOUNT CREATION API START------------------------------------
+    // $curl = curl_init();
+    // curl_setopt_array($curl, array(
+    //     CURLOPT_URL => 'http://192.168.1.225:9096/account/openAccountNew',
+    //     CURLOPT_RETURNTRANSFER => true,
+    //     CURLOPT_ENCODING => '',
+    //     CURLOPT_MAXREDIRS => 10,
+    //     CURLOPT_TIMEOUT => 0,
+    //     CURLOPT_FOLLOWLOCATION => true,
+    //     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    //     CURLOPT_CUSTOMREQUEST => 'POST',
+    //     CURLOPT_POSTFIELDS => '{
+    //     "city": "' . $city . '",
+    //     "userName": "BANKOWNER",
+    //     "companyName": null,
+    //     "constitutionCode": null,
+    //     "corporateTin": null,
+    //     "createdAccountNumber": null,
+    //     "createdCustomerNumber": null,
+    //     "custCategory": "ID",
+    //     "custType": "I",
+    //     "dateOfIncorporation": "' . $dateofbirth . '",
+    //     "docRef": null,
+    //     "domicileCountry": null,
+    //     "fingerPrint": null,
+    //     "kycDoc": null,
+    //     "mandate": null,
+    //     "natureOfBusiness": null,
+    //     "noCrTrans": "' . $noCrTrans . '",
+    //     "noDbTrans": "' . $noCrTrans . '",
+    //     "occupation": null,
+    //     "postedBy": null,
+    //     "preferredLanguage": null,
+    //     "proofOfAddress": "HR",
+    //     "reason": null,
+    //     "relationDetails": [
+    //         {
+    //             "approvalPanel": null,
+    //             "countryOfResidence": "' . $country . '",
+    //             "dob": "' . $dateofbirth . '",
+    //             "documentExpiry": "' . $nin_expiry_date . '",
+    //             "documentId": "' . $nin . '",
+    //             "documenttype": "National ID",
+    //             "email": "' . $email . '",
+    //             "firstName": "' . $first_name . '",
+    //             "homeAddress": "' . $home_address1 . '",
+    //             "homeAddress1": "' . $home_address2 . '",
+    //             "issueAuthority": null,
+    //             "issueDate": "' . $nin_issue_date . '",
+    //             "lastName": "' . $last_name . '",
+    //             "nationality": "' . $nationality . '",
+    //             "otherName": "' . $middle_name . '",
+    //             "personalPhone": "' . $phone_numer . '",
+    //             "picture":  "' . $profile_code . '",
+    //             "placeOfBirth": "' . $place_of_birth . '",
+    //             "sex": "M",
+    //             "signature": "' . $signature_code . '",
+    //             "staffCategory": "N",
+    //             "suffix": "stg",
+    //             "tin": "' . $tin . '",
+    //             "title": null,
+    //             "workAddress": "sng"
+    //         }
+    //     ],
+    //     "relationshipManagerCode": "001",
+    //     "residenceStatus": null,
+    //     "rfId": null,
+    //     "riskCode": null,
+    //     "sourceOfFunds": null,
+    //     "sourceOfWorth": null,
+    //     "subProduct": "' . $subProduct . '",
+    //     "subSector": "' . $subSector . '",
+    //     "subSegment": "' . $subSegment . '",
+    //     "terminal": null,
+    //     "totalCrTrans": "' . $totalCrtrans . '",
+    //     "totalDbTrans": "' . $totalDbtrans . '",
+    //     "userBranch": "' . $branch . '",
+    //     "worthValue": ""
+    // }',
+    //     CURLOPT_HTTPHEADER => array(
+    //         'Content-Type: application/json',
+    //     ),
+    // ));
+    // $response = curl_exec($curl);
+    // curl_close($curl);
+    // // echo $response;die();
+    // $res = json_decode($response);
+//-------------------- OLD ACCOUNT CREATION API END ---------------------------------------------
 
-    curl_setopt_array($curl, array(
-        CURLOPT_URL => 'http://192.168.1.225:9096/account/openAccountNew',
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => '{
-        "city": "' . $city . '",
-        "userName": "BANKOWNER",
-        "companyName": null,
-        "constitutionCode": null,
-        "corporateTin": null,
-        "createdAccountNumber": null,
-        "createdCustomerNumber": null,
-        "custCategory": "ID",
-        "custType": "I",
-        "dateOfIncorporation": "' . $dateofbirth . '",
-        "docRef": null,
-        "domicileCountry": null,
-        "fingerPrint": null,
-        "kycDoc": null,
-        "mandate": null,
-        "natureOfBusiness": null,
-        "noCrTrans": "' . $noCrTrans . '",
-        "noDbTrans": "' . $noCrTrans . '",
-        "occupation": null,
-        "postedBy": null,
-        "preferredLanguage": null,
-        "proofOfAddress": "HR",
-        "reason": null,
-        "relationDetails": [
-            {
-                "approvalPanel": null,
-                "countryOfResidence": "' . $country . '",
-                "dob": "' . $dateofbirth . '",
-                "documentExpiry": "' . $nin_expiry_date . '",
-                "documentId": "' . $nin . '",
-                "documenttype": "National ID",
-                "email": "' . $email . '",
-                "firstName": "' . $first_name . '",
-                "homeAddress": "' . $home_address1 . '",
-                "homeAddress1": "' . $home_address2 . '",
-                "issueAuthority": null,
-                "issueDate": "' . $nin_issue_date . '",
-                "lastName": "' . $last_name . '",
-                "nationality": "' . $nationality . '",
-                "otherName": "' . $middle_name . '",
-                "personalPhone": "' . $phone_numer . '",
-                "picture":  "' . $profile_code . '",
-                "placeOfBirth": "' . $place_of_birth . '",
-                "sex": "M",
-                "signature": "' . $signature_code . '",
-                "staffCategory": "N",
-                "suffix": "stg",
-                "tin": "' . $tin . '",
-                "title": null,
-                "workAddress": "sng"
-            }
-        ],
-        "relationshipManagerCode": "001",
-        "residenceStatus": null,
-        "rfId": null,
-        "riskCode": null,
-        "sourceOfFunds": null,
-        "sourceOfWorth": null,
-        "subProduct": "' . $subProduct . '",
-        "subSector": "' . $subSector . '",
-        "subSegment": "' . $subSegment . '",
-        "terminal": null,
-        "totalCrTrans": "' . $totalCrtrans . '",
-        "totalDbTrans": "' . $totalDbtrans . '",
-        "userBranch": "' . $branch . '",
-        "worthValue": ""
-    }',
-        CURLOPT_HTTPHEADER => array(
-            'Content-Type: application/json',
-        ),
-    ));
+//////////////////////////////---- NEW ACCOUNT CREATION API ---------///////////////////////////////
+
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'http://192.168.1.225:9096/account/openAccountNew',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{
+     "city": "' . $city . '",
+     "companyName": null,
+     "constitutionCode": null,
+     "corporateTin": null,
+     "createdAccountNumber": "",
+     "createdCustomerNumber": "",
+     "custCategory": "ID",
+     "custType": "I",
+     "dateOfIncorporation": "' . $dateofbirth . '",
+     "docRef": "HR",
+     "domicileCountry": "SL",
+     "entrySource": "M",
+     "fingerPrint": null,
+     "kycDoc": "HRAPP",
+     "mandate": "self to sign",
+     "natureOfBusiness": null,
+     "noCrTrans": "' . $noCrTrans . '",
+     "noDbTrans": "' . $noCrTrans . '",
+     "occupation": null,
+     "postedBy": "HR",
+     "preferredlanguage": null,
+     "proofOfAddress": "' . $profile_code . '",
+     "reason": null,
+     "relationDetails": [
+         {
+             "approvalpanel": null,
+             "countryofresidence": "' . $country . '",
+             "dob": "' . $dateofbirth . '",
+             "documentExpiry": "' . $nin_expiry_date . '",
+             "documentid": "' . $nin . '",
+             "documenttype": "National ID",
+             "email": "' . $email . '",
+             "firstName": "' . $first_name . '",
+             "homeAddress": "' . $home_address1 . '",
+             "homeAddress1": "' . $home_address2 . '",
+             "issueAuthority": "NATIONAL ID",
+             "issueDate": "' . $nin_issue_date . '",
+             "lastName": "' . $last_name . '",
+             "nationality": "' . $nationality . '",
+             "otherName": "' . $middle_name . '",
+             "personalPhone": "' . $phone_numer . '",
+             "picture":  "' . $profile_code . '",
+             "placeOfBirth": "' . $place_of_birth . '",
+             "sex": "' . $gender . '",
+             "signature": "' . $signature_code . '",
+             "staffCategory": "N",
+             "suffix": "' . $initials . '",
+             "tin": "' . $tin . '",
+             "title": "' . $title . '",
+             "workAddress": "sng"
+         }
+     ],
+     "relationshipManagerCode": "1204",
+     "residenceStatus": "Y",
+     "rfId": null,
+     "riskCode": null,
+     "sourceOfFunds": null,
+     "sourceOfWorth": null,
+     "subProduct": "' . $subProduct . '",
+     "subSector": "' . $subSector . '",
+     "subSegment": "' . $subSegment . '",
+     "terminal": "HR",
+     "totalCrTrans": "' . $totalCrtrans . '",
+     "totalDbTrans": "' . $totalDbtrans . '",
+     "userBranch": "' . $branch . '",
+     "userName": "BANKOWNER",
+     "userId": "HR User",
+     "worthValue": ""
+ }',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json'
+  ),
+));
 
     $response = curl_exec($curl);
-
     curl_close($curl);
-
-    // echo $response;die();
-
+    // echo $response;
     $res = json_decode($response);
 
-    // echo "Account Number-> ".$res -> accountNumber. "Customer Number-> " .$res -> customerNumber;die();
+
+    // echo "Account Number-> ".$res -> accountNumber. "Customer Number-> " .$res -> customerNumber;
     $bank_acc_no = $res->accountNumber;
     $customerNumber = $res->customerNumber;
 
