@@ -38,7 +38,7 @@ while ($row = mysqli_fetch_assoc($res_bank)) {
 
 // echo $totalCrtrans."->".$totalDbtrans."->".$totalDbtrans;die();
 
-$query = "SELECT * from employees where approval_status = 'Approved' AND status = 'Active' and id = $id";
+$query = "SELECT * from employees where approval_status = 'Pending' AND status = 'Active' and id = $id";
 $res = mysqli_query($mysqli, $query);
 
 if ($status == 'Approved') {
@@ -116,97 +116,7 @@ $signature_code = base64_encode($signature_data);
 // $result = mysqli_query($mysqli, $sql_profile);
 
 
-//----------------- OLD ACCOUNT CREATION API START------------------------------------
-    // $curl = curl_init();
-    // curl_setopt_array($curl, array(
-    //     CURLOPT_URL => 'http://192.168.1.225:9096/account/openAccountNew',
-    //     CURLOPT_RETURNTRANSFER => true,
-    //     CURLOPT_ENCODING => '',
-    //     CURLOPT_MAXREDIRS => 10,
-    //     CURLOPT_TIMEOUT => 0,
-    //     CURLOPT_FOLLOWLOCATION => true,
-    //     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    //     CURLOPT_CUSTOMREQUEST => 'POST',
-    //     CURLOPT_POSTFIELDS => '{
-    //     "city": "' . $city . '",
-    //     "userName": "BANKOWNER",
-    //     "companyName": null,
-    //     "constitutionCode": null,
-    //     "corporateTin": null,
-    //     "createdAccountNumber": null,
-    //     "createdCustomerNumber": null,
-    //     "custCategory": "ID",
-    //     "custType": "I",
-    //     "dateOfIncorporation": "' . $dateofbirth . '",
-    //     "docRef": null,
-    //     "domicileCountry": null,
-    //     "fingerPrint": null,
-    //     "kycDoc": null,
-    //     "mandate": null,
-    //     "natureOfBusiness": null,
-    //     "noCrTrans": "' . $noCrTrans . '",
-    //     "noDbTrans": "' . $noCrTrans . '",
-    //     "occupation": null,
-    //     "postedBy": null,
-    //     "preferredLanguage": null,
-    //     "proofOfAddress": "HR",
-    //     "reason": null,
-    //     "relationDetails": [
-    //         {
-    //             "approvalPanel": null,
-    //             "countryOfResidence": "' . $country . '",
-    //             "dob": "' . $dateofbirth . '",
-    //             "documentExpiry": "' . $nin_expiry_date . '",
-    //             "documentId": "' . $nin . '",
-    //             "documenttype": "National ID",
-    //             "email": "' . $email . '",
-    //             "firstName": "' . $first_name . '",
-    //             "homeAddress": "' . $home_address1 . '",
-    //             "homeAddress1": "' . $home_address2 . '",
-    //             "issueAuthority": null,
-    //             "issueDate": "' . $nin_issue_date . '",
-    //             "lastName": "' . $last_name . '",
-    //             "nationality": "' . $nationality . '",
-    //             "otherName": "' . $middle_name . '",
-    //             "personalPhone": "' . $phone_numer . '",
-    //             "picture":  "' . $profile_code . '",
-    //             "placeOfBirth": "' . $place_of_birth . '",
-    //             "sex": "M",
-    //             "signature": "' . $signature_code . '",
-    //             "staffCategory": "N",
-    //             "suffix": "stg",
-    //             "tin": "' . $tin . '",
-    //             "title": null,
-    //             "workAddress": "sng"
-    //         }
-    //     ],
-    //     "relationshipManagerCode": "001",
-    //     "residenceStatus": null,
-    //     "rfId": null,
-    //     "riskCode": null,
-    //     "sourceOfFunds": null,
-    //     "sourceOfWorth": null,
-    //     "subProduct": "' . $subProduct . '",
-    //     "subSector": "' . $subSector . '",
-    //     "subSegment": "' . $subSegment . '",
-    //     "terminal": null,
-    //     "totalCrTrans": "' . $totalCrtrans . '",
-    //     "totalDbTrans": "' . $totalDbtrans . '",
-    //     "userBranch": "' . $branch . '",
-    //     "worthValue": ""
-    // }',
-    //     CURLOPT_HTTPHEADER => array(
-    //         'Content-Type: application/json',
-    //     ),
-    // ));
-    // $response = curl_exec($curl);
-    // curl_close($curl);
-    // // echo $response;die();
-    // $res = json_decode($response);
-//-------------------- OLD ACCOUNT CREATION API END ---------------------------------------------
-
 //////////////////////////////---- NEW ACCOUNT CREATION API ---------///////////////////////////////
-
 
 $curl = curl_init();
 

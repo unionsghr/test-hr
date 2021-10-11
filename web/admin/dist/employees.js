@@ -3386,7 +3386,7 @@
                 {
                   key: "approveEmployee",
                   value: function (e) {
-                    alert(e);
+                    // alert(e);
                     // return false;
 
                     if (
@@ -3400,8 +3400,8 @@
 
                       let id = e;
                       let status = "Approved";
-                      alert(id);
-                      alert(id);
+                      // alert(id);
+                      // alert(id);
                       // return false;
 
                       $.ajax({

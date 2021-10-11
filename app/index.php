@@ -1,5 +1,5 @@
 <?php
-// include 'branches.php';
+include 'branches.php';
 include 'medical_excess.php';
 if(!file_exists('config.php')){
 	header("Location:install/");

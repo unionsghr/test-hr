@@ -691,6 +691,7 @@
                       "notch",
                       "percentage",
                       "amount",
+                      "installments",
                       "start_date",
                       "end_date",
                       "status",
@@ -713,6 +714,9 @@
                       },
                       {
                         sTitle: "Amount (SLL)",
+                      },
+                      {
+                        sTitle: "Pay't Installment",
                       },
                       {
                         sTitle: "Start Date",
@@ -766,6 +770,14 @@
                         "percentage",
                         {
                           label: "Percentage on Notch",
+                          type: "text",
+                          validation: "",
+                        },
+                      ],
+                      [
+                        "installments",
+                        {
+                          label: "How many Installments",
                           type: "text",
                           validation: "",
                         },
