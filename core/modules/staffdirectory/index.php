@@ -6,13 +6,13 @@
 
 $moduleName = 'staffdirectory';
 $moduleGroup = 'modules';
-define('MODULE_PATH',dirname(__FILE__));
-include APP_BASE_PATH.'header.php';
-include APP_BASE_PATH.'modulejslibs.inc.php';
+define('MODULE_PATH', dirname(__FILE__));
+include APP_BASE_PATH . 'header.php';
+include APP_BASE_PATH . 'modulejslibs.inc.php';
 ?><div class="span9">
 
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabStaffDirectory" href="#tabPageStaffDirectory"><?=t('Staff Directory')?></a></li>
+		<li class="active"><a id="tabStaffDirectory" href="#tabPageStaffDirectory"><?= t('Staff Directory') ?></a></li>
 	</ul>
 
 	<div class="tab-content">
@@ -43,20 +43,21 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 				</nav>
 			</div>
 
-			</div>
 		</div>
 	</div>
+</div>
 
 </div>
 <script>
-var modJsList = new Array();
+	var modJsList = new Array();
 
-modJsList['tabStaffDirectory'] = new StaffDirectoryObjectAdapter('StaffDirectory','StaffDirectory',{"status":"Active"});
-modJsList['tabStaffDirectory'].setShowAddNew(false);
-modJsList['tabStaffDirectory'].setLoadMoreButton($("#loadMoreStaffDirectory"));
-modJsList['tabStaffDirectory'].setSearchBox($("#StaffDirectory_search"));
-
-var modJs = modJsList['tabStaffDirectory'];
-
+	modJsList['tabStaffDirectory'] = new StaffDirectoryObjectAdapter('StaffDirectory', 'StaffDirectory', {
+		"status": "Active"
+	});
+	modJsList['tabStaffDirectory'].setShowAddNew(false);
+	modJsList['tabStaffDirectory'].setLoadMoreButton($("#loadMoreStaffDirectory"));
+	modJsList['tabStaffDirectory'].setSearchBox($("#StaffDirectory_search"));
+	// modJsList['tabStaffDirectory'].setRemoteTable(true);
+	var modJs = modJsList['tabStaffDirectory'];
 </script>
-<?php include APP_BASE_PATH.'footer.php';?>
+<?php include APP_BASE_PATH . 'footer.php'; ?>

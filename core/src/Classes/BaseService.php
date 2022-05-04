@@ -269,6 +269,7 @@ class BaseService
         $skipProfileRestriction = false,
         $sortData = array()
     ) {
+        
         if (!empty($mappingStr)) {
             $map = json_decode($mappingStr);
         }

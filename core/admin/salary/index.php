@@ -21,6 +21,9 @@ $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
 	'Notches','Notches','Notch Setup','NotchesAdapter','',''
 ));
 $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
+	'PaymentType','PaymentType','Payment Type','PaymentTypeAdapter','',''
+));
+$moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
 	'Salaries','Salaries','Salary Increment/Decrement','SalariesAdapter','',''
 ));
 $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(

@@ -79,7 +79,7 @@ class EmployeeExpense extends ApproveModel
 
   // echo "gets here"; die();
 
-    $mysqli = mysqli_connect("localhost", "root", "", "hrmdatatest_utb");
+    $mysqli = mysqli_connect("localhost", "root", "", "hrmdata");
     if (mysqli_connect_errno($mysqli)) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }

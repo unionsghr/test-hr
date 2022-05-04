@@ -1273,8 +1273,7 @@
                         }).remove(), $(".tableActionButton").tooltip()
                     }
                 }
-            }, 
-            {
+            }, {
                 key: "createTableServer",
                 value: function(e) {
                     var t = this.getHeaders();

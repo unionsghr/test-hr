@@ -2372,6 +2372,8 @@
                                         $.post(
                                             l,
                                             function (t) {
+                                                console.log(l);
+                                                console.log(t)
                                                 a.getSuccessCallBack(e, t);
                                             },
                                             "json"
@@ -2478,7 +2480,7 @@
                                 {
                                     key: "getDataMapping",
                                     value: function () {
-                                        return ["id", "image", "first_name", "middle_name", "last_name", "job_title", "department","branch", "work_phone", "work_email", "joined_date"];
+                                        return ["id", "image", "first_name", "middle_name", "last_name", "job_title", "department","branch", "work_phone", "work_email", "recruitment_date"];
                                     },
                                 },
                                 {
@@ -2494,7 +2496,7 @@
                                             { sTitle: "Branch" },
                                             { sTitle: "Work Phone" },
                                             { sTitle: "Work Email" },
-                                            { sTitle: "Joined Date" },
+                                            { sTitle: "Recruitment Date" },
                                         ];
                                     },
                                 },
@@ -2509,7 +2511,7 @@
                                             ["department", { label: "Department", type: "select2", "remote-source": ["CompanyStructure", "id", "title"] }],
                                             ["work_phone", { label: "Work Phone", type: "text", validation: "none" }],
                                             ["work_email", { label: "Work Email", type: "placeholder", validation: "emailOrEmpty" }],
-                                            ["joined_date", { label: "Joined Date", type: "date", validation: "" }],
+                                            ["recruitment_date", { label: "Recruitment Date", type: "date", validation: "" }],
                                         ];
                                     },
                                 },
@@ -2572,7 +2574,7 @@
                                 {
                                     key: "getDataMapping",
                                     value: function () {
-                                        return ["id", "image", "first_name", "middle_name", "last_name", "job_title", "department", "work_phone", "work_email", "joined_date"];
+                                        return ["id", "image", "first_name", "middle_name", "last_name", "job_title", "department", "work_phone", "work_email", "recruitment_date"];
                                     },
                                 },
                                 {
@@ -2587,7 +2589,7 @@
                                             { sTitle: "Department" },
                                             { sTitle: "Work Phone" },
                                             { sTitle: "Work Email" },
-                                            { sTitle: "Joined Date" },
+                                            { sTitle: "Recruitment Date" },
                                         ];
                                     },
                                 },
@@ -2602,7 +2604,7 @@
                                             ["department", { label: "Department", type: "select2", "remote-source": ["CompanyStructure", "id", "title"] }],
                                             ["work_phone", { label: "Work Phone", type: "text", validation: "none" }],
                                             ["work_email", { label: "Work Email", type: "placeholder", validation: "emailOrEmpty" }],
-                                            ["joined_date", { label: "Joined Date", type: "date", validation: "" }],
+                                            ["recruitment_date", { label: "Recruitment Date", type: "date", validation: "" }],
                                         ];
                                     },
                                 },

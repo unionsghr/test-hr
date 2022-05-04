@@ -17,6 +17,7 @@ $_REQUEST['sm'] = \Classes\BaseService::getInstance()->fixJSON($_REQUEST['sm']);
 $_REQUEST['cl'] = \Classes\BaseService::getInstance()->fixJSON($_REQUEST['cl']);
 $_REQUEST['ft'] = \Classes\BaseService::getInstance()->fixJSON($_REQUEST['ft']);
 
+
 $columns = json_decode($_REQUEST['cl'], true);
 $columns[] = "id";
 $table = $_REQUEST['t'];
@@ -43,6 +44,8 @@ $skipProfileRestriction = false;
 if (isset($_REQUEST['skip']) && $_REQUEST['type'] = "1") {
     $skipProfileRestriction = true;
 }
+// print_r($_REQUEST['t']);
+// die();
 
 $sortData = \Classes\BaseService::getInstance()->getSortingData($_REQUEST);
 $data = \Classes\BaseService::getInstance()->getData(
@@ -57,6 +60,8 @@ $data = \Classes\BaseService::getInstance()->getData(
     $skipProfileRestriction,
     $sortData
 );
+
+
 
 //Get Total row count
 $totalRows = 0;

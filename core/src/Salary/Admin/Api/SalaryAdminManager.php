@@ -39,7 +39,8 @@ class SalaryAdminManager extends AbstractModuleManager
         $this->addModelClass('Gl_summary');
         $this->addModelClass('Vw_EmployeeSalary');
         $this->addModelClass('Vw_Final_Salaries');
-        $this->addModelClass('Benefits'); 
+        $this->addModelClass('Benefits');
+        $this->addModelClass('PaymentType'); 
        
     }
 }

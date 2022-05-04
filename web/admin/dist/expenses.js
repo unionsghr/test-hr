@@ -1147,7 +1147,7 @@
                         ["amount_limit", {
                             label: "Expense Limit",
                             type: "text",
-                            validation: "number"
+                            validation: "none"
                         }]
                     ]
                 }
@@ -1621,7 +1621,7 @@
                                 iDisplayStart: o
                             },
                             u = this.getCustomTableParams();
-                        $.extend(s, u), $("#" + e + " #grid").dataTable(s), $(".dataTables_paginate ul").addClass("pagination"), $(".dataTables_length").hide(), $(".dataTables_filter input").addClass("form-control"), $(".dataTables_filter input").attr("placeholder", "Search"), $(".dataTables_filter label").contents().filter(function() {
+                        $.extend(s, u), $("#" + e + " #grid").dataTable(s), $(".dataTables_paginate ul").addClass("pagination"), $(".dataTables_length").hide(), $(".dataTables_filter input").addClass("form-control"), $(".dataTables_filter input").attr("placeholder", "Search Here"), $(".dataTables_filter label").contents().filter(function() {
                             return 3 === this.nodeType
                         }).remove(), $(".tableActionButton").tooltip()
                     }
@@ -1657,7 +1657,7 @@
                         aTargets: [this.getDataMapping().length]
                     }]);
                     var o = this.getCustomTableParams();
-                    $.extend(n, o), $("#" + e + " #grid").dataTable(n), $(".dataTables_paginate ul").addClass("pagination"), $(".dataTables_length").hide(), $(".dataTables_filter input").addClass("form-control"), $(".dataTables_filter input").attr("placeholder", "Search"), $(".dataTables_filter label").contents().filter(function() {
+                    $.extend(n, o), $("#" + e + " #grid").dataTable(n), $(".dataTables_paginate ul").addClass("pagination"), $(".dataTables_length").hide(), $(".dataTables_filter input").addClass("form-control"), $(".dataTables_filter input").attr("placeholder", "Search NOT WORKING"), $(".dataTables_filter label").contents().filter(function() {
                         return 3 === this.nodeType
                     }).remove(), $(".tableActionButton").tooltip()
                 }
@@ -1732,12 +1732,12 @@
                 }
             }, {
                 key: "showDomElement",
-                value: function(e, t, a, l, i) {
+                value: function (e, t, a, l, i) {
                     var r = this,
                         n = "";
                     n = i ? "#dataMessageModel" : "#messageModel", $(n).unbind("hide"), i ? this.renderModelFromDom("dataMessage", e, t) : this.renderModelFromDom("message", e, t), null != a ? ($(n).modal({
                         show: !0
-                    }), $(n).on("hidden.bs.modal", function() {
+                    }), $(n).on("hidden.bs.modal", function () {
                         a.apply(r, l), $(".modal-backdrop").remove()
                     })) : $(n).modal({
                         backdrop: "static"
@@ -1775,7 +1775,9 @@
                 }
             }, {
                 key: "save",
+                
                 value: function(e, t) {
+                    // alert('here');die;
                     var a = new n.default(this.getTableName() + "_submit", !0, {
                         ShowPopup: !1,
                         LabelErrorClass: "error"
@@ -1989,20 +1991,18 @@
                     for (var c = 0; c < i.length; c++) "datagroup" === i[c][1].type && s.find("#" + i[c][0]).data("field", i[c]);
                     if (!1 === this.showSave ? s.find(".saveBtn").remove() : (s.find(".saveBtn").off(), s.find(".saveBtn").data("modJs", this), s.find(".saveBtn").on("click", function() {
   
-                        // alert("here"); return false;
+            /*          // alert("here"); return false;
                         let id_ = $('#items').val();
                         
                         let  json_itemdata= $('#items').val();
-                        
-                        //MODIFIED TO ENABLE EXPENSE CATEGORY TO WORK
-                        
+                        // alert(json_itemdata);die;
+                        //MODIFIED TO ENABLE EXPENSE CATEGORY TO WORK                        
 
                         let json_item = JSON.parse(json_itemdata);
                         let total_amount = 0;
 
                         // let amt = $('#amount_').val();
                         $.each(json_item, function(index) {
-
 
                             total_amount = total_amount + parseFloat(json_item[index].local_equivalent)
                             
@@ -2028,11 +2028,10 @@
                                 var cal_amount = data;
                                 // alert(cal_amount.data); 
                                 // alert(data);
-                                $('#amount').val(cal_amount.data);
-                      
+                                $('#amount').val(cal_amount.data);                      
                             }
                         });
-
+*/
                             return null != $(this).data("modJs").saveSuccessItemCallback && void 0 !== $(this).data("modJs").saveSuccessItemCallback ? $(this).data("modJs").save($(this).data("modJs").retriveItemsAfterSave(), $(this).data("modJs").saveSuccessItemCallback) : $(this).data("modJs").save(), !1
                         })), !1 === this.showCancel ? s.find(".cancelBtn").remove() : (s.find(".cancelBtn").off(), s.find(".cancelBtn").data("modJs", this), s.find(".cancelBtn").on("click", function() {
                            

@@ -11,7 +11,7 @@ include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
 
 $options = array();
-$options['setRemoteTable'] = 'true';
+// $options['setRemoteTable'] = 'true';
 
 $moduleBuilder = new \Classes\ModuleBuilder\ModuleBuilder();
 $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(

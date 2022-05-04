@@ -15,6 +15,7 @@ class FileService
     {
     }
 
+
     public static function getInstance()
     {
         if (empty(self::$me)) {

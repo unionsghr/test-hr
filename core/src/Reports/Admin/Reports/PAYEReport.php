@@ -13,27 +13,55 @@ class PAYEReport extends CSVReportBuilder implements CSVReportBuilderInterface
     { 
 
         $query = "SELECT 
+        tin_no as 'TIN NUMBER',
         employee_id as 'EMPLOYEE ID',
-        first_name as 'FIRST NAME',
-        middle_name as 'MIDDLE NAME',
-        last_name as 'LAST NAME',
+        -- first_name as 'FIRST NAME',
+        -- middle_name as 'MIDDLE NAME',
+        -- last_name as 'LAST NAME',
+        (SELECT CONCAT(first_name, ' ', middle_name, ' ', last_name )) as 'EMPLOYEE NAME',
+        birthday as 'DATE OF BIRTH',
+        gender as 'GENDER',
+        job_title as 'DESIGNATION',
+        
         -- (SELECT name from PayGrades where id = pay_grade) as 'PAY GRADE',
         -- (SELECT name from Notches where id = notches) as 'NOTCH',
-        bank_acc_no as 'ACCOUNT NUMBER',
+        -- bank_acc_no as 'ACCOUNT NUMBER',
         -- nassit_no as 'NASSIT No.',
         -- (SELECT br_description from Branches where br_code = branch) as 'BRANCH',        
         basic as 'BASIC SALARY',
-        -- car as 'CAR',
+        null as 'RENT ALLOWANCE',
+        overtime as 'OVERTIME',
+        null as 'COMMISSION',
+        null as 'PAYMENT IN LIEU OF NOTICE',
+        null as 'OTHER ALLOWANCES',
+        -- (duty_allowance + lunch) AS 'OTHER_ALLOWANCES',
+        --(select duty_allowance + lunch + stewards_allowance + displacement_allowance + audit_allowance + word_processing + sundry_allowance + car_allowance from vw_final_salaries)  as 'OTHER ALLOWANCES',
+        --, lunch, stewards_allowance, displacement_allowance, audit_allowance, word_procesing, sundry_allowance, car_allowance
+        null as 'LEAVE PASSAGE ALLOWANCE',
+        null as 'BONUS',
+        null as 'LEAVE ALLOWANCE IN EXCESS OF BASIC SALARY',
+        null as 'BENEFIT IN KIND',
+        transport as 'TRANSPORT',
+        null as 'CLOTHING ALLOWANCE',
+        null as 'STIPEND',
+        null as 'OTHER INCOME',
+        nassit10_deduct as 'NASSIT CONTRIBUTION',
+        gross_salary as 'GROSS INCOME',
+        taxable_income as 'TAXABLE INCOME',
+        paye as 'PAYE'
+
+
+
         -- honorarium as 'HONORARIUM',
         -- transport as 'TRANSPORT',
         -- lunch as 'LUNCH',
         -- monthly_rent as 'RENT',
-        gross_salary as 'GROSS SALARY',
+        -- gross_salary as 'GROSS SALARY',
         -- nassit_5 as 'EMPLOYEE NASSIT',
         -- nassit10_deduct as 'EMPLOYER NASSIT',
         -- medical_excess as 'MEDICAL EXCESS',
         -- union_dues as 'UNION DUES',            
-        paye as 'PAYE'
+        -- paye as 'PAYE'
         -- witholding_tax as 'WITHOLDING TAX',
         -- total_deduction as 'TOTAL DEDUCTION',
         -- net_salary as 'NET SALARY',

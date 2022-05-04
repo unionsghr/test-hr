@@ -20,7 +20,7 @@ $options['setShowAddNew'] = 'false';
 
 $moduleBuilder = new \Classes\ModuleBuilder\ModuleBuilder();
 $moduleBuilder->addModuleOrGroup(new \Classes\ModuleBuilder\ModuleTab(
-	'EmployeeForm','EmployeeForm','My Forms','EmployeeFormAdapter','','',true,$options
+	'EmployeeForm','EmployeeForm','My Forms','EmployeeFormAdapter','{"status": "Approved"}','',true,$options
 ));
 echo \Classes\UIManager::getInstance()->renderModule($moduleBuilder);
 

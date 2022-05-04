@@ -42,7 +42,9 @@ class ActiveEmployeeReport extends CSVReportBuilder implements CSVReportBuilderI
             private_email as 'Private Email',
             recruitment_date as 'Joined Date',
             confirmation_date as 'Confirmation Date',
-            (SELECT title from CompanyStructures where id = department) as 'Department/Branch'
+            (SELECT title from CompanyStructures where id = department) as 'Department',
+            (SELECT title from CompanyStructures where comp_code = branch) as 'Branch'
+
             -- (SELECT concat(`first_name`,' ',`middle_name`,' ', `last_name`,' [Employee ID:',`employee_id`,']') 
             -- from Employees e1 where e1.id = e.supervisor) as 'Supervisor', notes as 'Notes'- in_time as 'Time In'
 

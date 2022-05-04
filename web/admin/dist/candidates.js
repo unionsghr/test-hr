@@ -688,7 +688,7 @@
                         // alert("Candidate Successfully Added to Staff list");                        
                        
                         $.ajax({
-                            url: '../../../../utb_hr/core/recruitstaff.php',
+                            url: '../../../../rokel_hrm/core/recruitstaff.php',
                             type: 'post',
                             contentType: 'application/json',
                             dataType: "json",

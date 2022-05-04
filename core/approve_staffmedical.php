@@ -49,7 +49,7 @@ $row_gl = mysqli_fetch_assoc($result_gl);
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => 'http://192.168.1.225:8680/core/api/v1.0/account/'.$general_ledger.'/transfer',
+        CURLOPT_URL => 'http://10.93.101.144:9091/core/api/v1.0/account/'.$general_ledger.'/transfer',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,

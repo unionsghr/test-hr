@@ -13,7 +13,7 @@ class PayrollReport extends CSVReportBuilder implements CSVReportBuilderInterfac
     { 
 
         $query = "SELECT 
-        employee_id as 'EMPLOYEE ID',
+        /*employee_id as 'EMPLOYEE ID',
         first_name as 'FIRST NAME',
         middle_name as 'MIDDLE NAME',
         last_name as 'LAST NAME',
@@ -22,23 +22,37 @@ class PayrollReport extends CSVReportBuilder implements CSVReportBuilderInterfac
         bank_acc_no as 'ACCOUNT NUMBER',
         nassit_no as 'NASSIT No.',
         (SELECT br_description from Branches where br_code = branch) as 'BRANCH',        
-        basic as 'BASIC SALARY',
-        car as 'CAR',
-        honorarium as 'HONORARIUM',
+       */ sum(basic) as 'BASIC SALARY',
+       'Basic Salary' AS `component_type`,
+        'D' AS `flag`,
+        branch AS `branch`,
+        '143000000001' AS `general_ledger`,
+        'Permanent' AS `status`
+        -- FROM vw_final_salaries
+        /*casual_labour as 'CASUAL LABOUR',
+        duty_allowance as 'DUTY ALLOWANCE',
+        overtime as 'OVERTIME',
         transport as 'TRANSPORT',
         lunch as 'LUNCH',
-        monthly_rent as 'RENT',
+        rent as 'RENT',
+        stewards_allowance as 'STEWARDS ALLOWANCE',
+        displacement_allowance as 'DISPLACEMENT ALLOWANCE',
+        audit_allowance as 'AUDIT ALLOWANCE',
+        word_processing as 'WORD PROCESSING',
+        sundry_allowance as 'SUNDRY ALLOWANCE',
+        bonus as 'BONUS',
+        car_allowance as 'CAR ALLOWANCE',
         gross_salary as 'GROSS SALARY',
         nassit_5 as 'EMPLOYEE NASSIT',
         nassit10_deduct as 'EMPLOYER NASSIT',
         medical_excess as 'MEDICAL EXCESS',
-        union_dues as 'UNION DUES',            
+        staff_association as 'STAFF ASSOCIATION',            
         paye as 'PAYE',
         witholding_tax as 'WITHOLDING TAX',
         total_deduction as 'TOTAL DEDUCTION',
         net_salary as 'NET SALARY',
         (SELECT name from EmploymentStatus where id = employment_status) as 'EMPLOYMENT STATUS'
-        -- payroll as 'PAYROLL'
+        */-- payroll as 'PAYROLL'
         
         
         FROM vw_final_salaries ";

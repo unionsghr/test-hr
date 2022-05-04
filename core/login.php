@@ -194,8 +194,8 @@ $csrfToken = sha1(rand(4500, 100000) . time(). CLIENT_BASE_URL);
 		html, body {
 			background-color: #FFF;
 			opacity: 0.9;
-			background-image: url("log1.jpeg");
-		}
+			background-image: url("login_img8.jpg");
+		} 
 		body {
 			/* padding-top: 35px; */
 			/* padding-left: 560px; */

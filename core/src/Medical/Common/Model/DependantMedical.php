@@ -6,7 +6,7 @@ use Model\BaseModel;
 
 class DependantMedical extends BaseModel
 {
-    public $table = 'Dependantmedical';
+    // public $table = 'Dependantmedical';
 
     public function getAdminAccess()
     {

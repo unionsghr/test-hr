@@ -236,5 +236,12 @@ class Employee extends BaseModel
         return $country->id;
     }
 
+    public static function getDepartments()
+    {
+        $departments = new CompanyStructure();
+        $list = $departments->load("type = ?", 'Department');
+        return $list;
+    }
+
     public $table = 'Employees';
 }

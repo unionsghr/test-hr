@@ -110,11 +110,11 @@
                                 "allow-null": !0,
                                 "remote-source": ["Employee", "id", "first_name+middle_name+last_name"]
                             }],
-                            ["username", {
-                                label: "User Name",
-                                type: "text",
-                                validation: "username"
-                            }],
+                            // ["username", {
+                            //     label: "User Name",
+                            //     type: "text",
+                            //     validation: "username"
+                            // }],
                             ["email", {
                                 label: "Email",
                                 type: "text",

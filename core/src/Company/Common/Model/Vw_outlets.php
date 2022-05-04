@@ -5,7 +5,7 @@ use Model\BaseModel;
 
 class Vw_outlets extends BaseModel
 {
-    public $table = 'vw_outlets';
+    public $table = 'vw_outlet';
 
     public function getAdminAccess()
     {

@@ -19,8 +19,45 @@ $data = json_decode($json);
 
 $id = isset($data->id) ? $data->id : 0;
 
-$sql = "SELECT payroll, round(SUM(basic),2) as basic, round(SUM(honorarium),2) as honorarium, round(SUM(car),2) as car, round(sum(transport),2) as transport, round(SUM(lunch),2) as lunch, round(SUM(monthly_rent),2) as rent, round(SUM(gross_salary),2) as gross_salary, round(SUM(nassit_5),2) as employee_nassit, round(SUM(nassit10_deduct),2) as employer_nassit, round(SUM(medical_excess),2) as medical_excess, round(SUM(union_dues),2) as union_dues, round(SUM(paye),2) as paye, round(SUM(witholding_tax),2) as witholding_tax, round(sum(total_deduction),2) as total_deduction, round(SUM(net_salary),2) as net_salary, round(SUM(net_salary_contract),2) as net_salary_contract, verified_by, approved_by, finalized_date FROM vw_final_salaries WHERE payroll = '$id' GROUP BY payroll
-";
+$sql ="SELECT payroll, 
+round(SUM(basic),2) as basic, 
+round(SUM(casual_labour),2) as casual_labour,
+round(SUM(stewards_allowance),2) as stewards_allowance, 
+round(SUM(displacement_allowance),2) as displacement_allowance, 
+round(SUM(audit_allowance),2) as audit_allowance,
+round(SUM(word_processing),2) as word_processing, 
+round(SUM(sundry_allowance),2) as sundry_allowance, 
+round(SUM(bonus),2) as bonus, 
+round(SUM(car_allowance ),2) as car_allowance , 
+round(SUM(staff_association),2) as staff_association,  
+round(SUM(duty_allowance),2) as duty_allowance, 
+round(SUM(overtime),2) as overtime, 
+round(sum(transport),2) as transport, 
+round(SUM(lunch),2) as lunch, 
+round(SUM(gross_salary),2) as gross_salary, 
+round(SUM(nassit_5),2) as employee_nassit,
+round(SUM(medical_excess),2) as medical_excess,  
+round(SUM(union_dues),2) as union_dues,  
+round(SUM(rent),2) as rent, 
+round(SUM(paye),2) as paye,
+round(sum(total_deduction),2) as total_deduction,
+round(SUM(net_salary),2) as net_salary,  
+round(SUM(nassit10_deduct ),2) as employer_nassit,
+round(SUM(witholding_tax),2) as witholding_tax, 
+round(SUM(nassit10_payt),2) as nassit10_payt,
+round(SUM(total_allowance),2) as total_allowance,
+round(SUM(taxable_income),2) as taxable_income,
+round(SUM(nassit5_contract),2) as nassit5_contract,
+round(SUM(total_deduct_contract),2) as total_deduct_contract,
+round(SUM(net_salary_contract),2) as net_salary_contract,
+round(SUM(nassit10_payt_contr ),2) as nassit10_payt_contr,
+round(SUM(nassit10_dedt_contr),2) as nassit10_dedt_contr, 
+posting_date,
+verified_by, 
+approved_by, 
+finalized_date,
+documentRef
+FROM vw_final_salaries WHERE payroll = '$id' GROUP BY payroll";
 
 $result = mysqli_query($mysqli, $sql);
 $row = mysqli_fetch_assoc($result);

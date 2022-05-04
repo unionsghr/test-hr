@@ -11,11 +11,11 @@ class NASSITReport extends CSVReportBuilder implements CSVReportBuilderInterface
     public function getMainQuery()
     { 
         $query = "SELECT 
-        employee_id as 'EMPLOYEE ID',
+        employee_id as 'STAFF ID',
         first_name as 'FIRST NAME',
         middle_name as 'MIDDLE NAME',
         last_name as 'LAST NAME',
-        bank_acc_no as 'ACCOUNT NUMBER',
+        -- bank_acc_no as 'ACCOUNT NUMBER',
         nassit_no as 'NASSIT No.',
         NVL(basic, 0) as 'BASIC SALARY',
         -- basic as 'BASIC SALARY',

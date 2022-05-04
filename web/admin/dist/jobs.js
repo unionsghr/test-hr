@@ -137,7 +137,19 @@
                                 "validation": "none",
                                 "type": "select2multi",
                                 "remote-source": ["Language", "id", "name"]
-                            }]
+                            }],
+                            [
+                                "level",
+                                {
+                                    label: "Staff Level",
+                                    type: "select",
+                                    source: [
+                                        ["Non-Management", "Non-Management"],
+                                        ["Management", "Management"],
+                                        ["Senior Management", "Senior Management"],
+                                    ],
+                                }
+                            ],
                         ]
                     }
                 }, {
